@@ -4,7 +4,7 @@
 
 typedef enum {
       GPIO_IN = 0,
-          GPIO_OUT = 1
+      GPIO_OUT = 1
 } gpio_direction_e;
 
 int hello();

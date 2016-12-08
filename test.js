@@ -1,3 +1,3 @@
-var addon = require('./Build/Release/gpio');
+var addon = require('./build/Release/gpio');
 
 console.log(addon.hello());

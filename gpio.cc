@@ -30,7 +30,7 @@ void SetPinMode(const FunctionCallbackInfo<Value>& args) {
   Local<Number> num = Number::New(isolate, value);
 
   args.GetReturnValue().Set(num);
-} 
+}
 
 void GetPinMode(const FunctionCallbackInfo<Value>& args) {
   Isolate* isolate = Isolate::GetCurrent();
@@ -98,6 +98,15 @@ void GetPinValue(const FunctionCallbackInfo<Value>& args) {
   args.GetReturnValue().Set(num);
 }
 
+void SetGPIOCallback(const FunctionCallbackInfo<Value>& args) {
+  Isolate* isolate = Isolate::GetCurrent();
+  HandleScope scope(isolate);
+
+  isolate->ThrowException(Exception::TypeError(
+        String::NewFromUtf8(isolate, "Not implemented.")));
+  return;
+}
+
 void Init(Handle<Object> exports) {
   init_gpio();
 
@@ -106,6 +115,7 @@ void Init(Handle<Object> exports) {
   NODE_SET_METHOD(exports, "getPinMode", GetPinMode);
   NODE_SET_METHOD(exports, "setPinValue", SetPinValue);
   NODE_SET_METHOD(exports, "getPinValue", GetPinValue);
+  NODE_SET_METHOD(exports, "setGPIOCallback", SetGPIOCallback);
 }
 
 NODE_MODULE(gpio, Init)
