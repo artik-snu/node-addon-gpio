@@ -71,3 +71,7 @@ run like below
 ```
 $ node hello.js # 'world'
 ```
+
+## License
+
+This project is licensed by [MIT](https://github.com/artik-snu/node-addon-gpio/blob/master/LICENSE)
